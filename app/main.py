@@ -1,9 +1,11 @@
 def hello(name: str = "world") -> str:
-    return f"Hello, {name}!"
+    message = f"Hello, {name}!"
+    return message
 
 
 def main() -> None:
-    print(hello())
+    result = hello()
+    print(result)
 
 
 if __name__ == "__main__":
