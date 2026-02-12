@@ -82,9 +82,10 @@ jobs:
                   python -m pip install --upgrade pip
                   pip install -e ".[dev]"
 
-            - name: pip-audit (fail on vulns)
+            - name: pip-audit (third-party deps only)
               run: |
-                  pip-audit --strict
+                  python -m pip freeze --exclude-editable > requirements-audit.txt
+                  pip-audit -r requirements-audit.txt --strict
 
     codeql:
         name: CodeQL (SAST)
