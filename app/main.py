@@ -1,5 +1,5 @@
 def hello(name: str = "world") -> str:
-    message = f"Hallo, {name}!"
+    message = f"Hello, {name}!"
     return message
 
 
